@@ -1,0 +1,10 @@
+[Unit]
+Description={description}
+After=multi-user.target
+
+[Service]
+ExecStart= {command}  {script}
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
