@@ -13,6 +13,7 @@ int main(int argc, char* argv[]) {
   cli.add_argument("name", "n", false, "The service's name");
   cli.add_argument("script", "s", true, "script to be executed");
   cli.add_argument("command", "c", true, "command to be used for script execution");
+  cli.add_argument("description", "d", false, "the description for your systemd service");
   cli.parse(argc,argv);
 
   try {

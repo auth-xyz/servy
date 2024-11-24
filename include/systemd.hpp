@@ -96,23 +96,7 @@ private:
     }
   }
 
-  /*std::string downloadTemplate() {*/
-  /*  std::string url = "https://raw.githubusercontent.com/auth-xyz/assets/refs/heads/main/templates/template.service";*/
-  /*  std::string tempPath = "/tmp/template.service";*/
-  /*  std::string command = "wget -O " + tempPath + " " + url;*/
-  /**/
-  /*  if (!ensureFile(tempPath)) {*/
-  /*    if (system(command.c_str()) != 0) {*/
-  /*      std::cerr << "Failed to download template from: " << url << std::endl;*/
-  /*      return "";*/
-  /*    }*/
-  /*  }*/
-  /**/
-  /*  return tempPath;*/
-  /*}*/
-
   void editTemplate(const std::string& templatePath, const std::string& description, const std::string& script, const std::string& command, const std::string& outputPath) {
-    // Open the template file for reading
     std::ifstream inFile(templatePath);
     if (!inFile) {
       std::cerr << "Failed to open template file: " << templatePath << std::endl;
