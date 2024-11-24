@@ -26,6 +26,7 @@ clean:
 
 # Compile the executable from object files
 $(EXEC): $(OBJS)
+	cp template/template.service /tmp/template.service
 	$(CXX) $(CXXFLAGS) $(OBJS) -o $(EXEC) -lcurl
 
 # Compile each .cpp file into a .o file

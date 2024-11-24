@@ -12,7 +12,7 @@
 class Systemd {
 public:
   int createService(const std::string& name, const std::string& description, const std::string& script, const std::string& command) {
-    const std::string templatePath = "./template/template.service";
+    const std::string templatePath = "/tmp/template.service";
     if (templatePath.empty()) {
       std::cerr << "Failed to read the template." << std::endl;
       return EXIT_FAILURE;
