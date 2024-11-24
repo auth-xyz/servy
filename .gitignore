@@ -1,2 +1,4 @@
+dist/
+build/
 servy
 services.toml
