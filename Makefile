@@ -57,6 +57,7 @@ distcheck: dist
 
 # Install the executable
 install: $(EXEC)
+	cp template/template.service /tmp/template.service
 	install -m 755 $(EXEC) $(INSTALL_PATH)
 
 # Uninstall the executable
