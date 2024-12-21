@@ -26,7 +26,7 @@
 ### Setting up
 
 There really isn't any setting up for `servy`, it's just "installing" (building) servy and using it.
-
+* requires [clicky](https://github.com/auth-xyz/clicky)
 
 ```bash
 $ git clone https://github.com/auth-xyz/servy

@@ -1,6 +1,6 @@
-#include "../include/clicky.hpp"
 #include "../include/systemd.hpp"
- 
+#include "clicky.hpp"
+
 int main(int argc, char* argv[]) {
   Systemd sysd;
   clicky cli;
