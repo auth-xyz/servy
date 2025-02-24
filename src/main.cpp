@@ -1,5 +1,5 @@
 #include "../include/systemd.hpp"
-#include "clicky.hpp"
+#include <clicky/clicky.hpp>
 
 int main(int argc, char* argv[]) {
   Systemd sysd;
@@ -10,22 +10,28 @@ int main(int argc, char* argv[]) {
   std::string serviceScript;
   std::string serviceCommand;
 
-  cli.add_argument("name", "n", false, "The service's name");
-  cli.add_argument("script", "s", true, "script to be executed");
-  cli.add_argument("command", "c", true, "command to be used for script execution");
-  cli.add_argument("description", "d", false, "the description for your systemd service");
+  /* cli.add_get_argument("name", "n", false, "The service's name"); */
+  /* cli.add_get_argument("script", "s", true, "script to be executed"); */
+  /* cli.add_get_argument("command", "c", true, "command to be used for script execution"); */
+  /* cli.add_get_argument("description", "d", false, "the description for your systemd service"); */
+  cli.bulk_add_arguments({
+    {"name", "n", "service filename", false},
+    {"description", "", "description for service", false},
+    {"script", "s", "script to run when service is ran", true},
+    {"command", "c", "command to run script (eg:/usr/bin/bash)", true},
+  });
   cli.parse(argc,argv);
 
   try {
-    serviceScript = cli.argument("script");
-    serviceCommand = cli.argument("command");
+    serviceScript = cli.get_argument("script");
+    serviceCommand = cli.get_argument("command");
 
-    if (cli.argument("name").empty())
+    if (cli.has_argument("name"))
     {
       sysd.createService(serviceName, serviceDescription, serviceScript, serviceCommand);
     } else 
     {
-      serviceName = cli.argument("name");
+      serviceName = cli.get_argument("name");
       sysd.createService(serviceName, serviceDescription, serviceScript, serviceCommand);
 
     }

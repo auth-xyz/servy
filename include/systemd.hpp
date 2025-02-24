@@ -144,9 +144,6 @@ private:
     }
 
     outFile.close();
-
-    // Uncomment if file permissions need to be set explicitly
-    // system(("chmod 644 " + outputPath).c_str());
   }
 };
 

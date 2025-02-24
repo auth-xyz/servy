@@ -1,6 +1,6 @@
 # Compiler and flags
 CXX = g++
-CXXFLAGS = -std=c++20 -lcurl -lclicky
+CXXFLAGS =-std=c++20 -Wl,-Bstatic -lclicky -Wl,-Bdynamic -lcurl
 ROOT_DIR = .
 SRC_DIR = $(ROOT_DIR)/src
 HEADERS = $(ROOT_DIR)/include
